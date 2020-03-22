@@ -13799,8 +13799,22 @@ a.text-dark:focus {
 
 .side-bar__body {
   height: calc(100vh - 100px);
-  padding: 0 20px;
+  padding: 20px 20px 0;
   background-color: #2f3e51;
+}
+
+.side-bar__body .group {
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.side-bar__body .group__name {
+  font-size: 15px;
+}
+
+.side-bar__body .group__message {
+  margin-top: 5px;
+  font-size: 11px;
 }
 
 .main-chat {

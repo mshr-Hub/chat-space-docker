@@ -19,5 +19,10 @@
         </div>
     </div>
 
-    <div class="side-bar__body"></div>
+    <div class="side-bar__body">
+        <div class="group">
+            <div class="group__name">グループ名</div>
+            <div class="group__message">メッセージ</div>
+        </div>
+    </div>
 </div>
