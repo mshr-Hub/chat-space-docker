@@ -1,0 +1,17 @@
+.main-chat {
+    width: calc(100vw - 300px);
+    height: 100%;
+    background-color: #fff;
+    &__header {
+        height: 100px;
+        border-bottom: solid 1px #eee;
+    }
+    &__body {
+        height: calc(100vh - 190px);
+        background-color: #fafafa;
+    }
+    &__message {
+        height: 90px;
+        background-color: #d2d2d2;
+    }
+}

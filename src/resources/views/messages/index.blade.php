@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="wrapper">
-        message@index
+        <!-- messages@index -->
         @include('messages._side_bar')
         @include('messages._main_chat')
     </div>

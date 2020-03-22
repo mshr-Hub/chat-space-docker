@@ -1,0 +1,12 @@
+.side-bar {
+    width: 300px;
+    height: 100%;
+    background-color: #253141;
+    &__header {
+        height: 100px;
+    }
+    &__body {
+        height: calc(100vh - 100px);
+        background-color: #2f3e51;
+    }
+}

@@ -10882,3 +10882,45 @@ a.text-dark:focus {
   }
 }
 
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.side-bar {
+  width: 300px;
+  height: 100%;
+  background-color: #253141;
+}
+
+.side-bar__header {
+  height: 100px;
+}
+
+.side-bar__body {
+  height: calc(100vh - 100px);
+  background-color: #2f3e51;
+}
+
+.main-chat {
+  width: calc(100vw - 300px);
+  height: 100%;
+  background-color: #fff;
+}
+
+.main-chat__header {
+  height: 100px;
+  border-bottom: solid 1px #eee;
+}
+
+.main-chat__body {
+  height: calc(100vh - 190px);
+  background-color: #fafafa;
+}
+
+.main-chat__message {
+  height: 90px;
+  background-color: #d2d2d2;
+}
+
