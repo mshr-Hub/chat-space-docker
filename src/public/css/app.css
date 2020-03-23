@@ -13747,6 +13747,157 @@ a.text-dark:focus {
   clip: auto;
 }
 
+/*!
+ * YUI 3.5.0 - reset.css (http://developer.yahoo.com/yui/3/cssreset/)
+ * http://cssreset.com
+ * Copyright 2012 Yahoo! Inc. All rights reserved.
+ * http://yuilibrary.com/license/
+ */
+
+/*
+    TODO will need to remove settings on HTML since we can't namespace it.
+    TODO with the prefix, should I group by selector or property for weight savings?
+*/
+
+html {
+  color: #000;
+  background: #FFF;
+}
+
+/*
+    TODO remove settings on BODY since we can't namespace it.
+*/
+
+/*
+    TODO test putting a class on HEAD.
+        - Fails on FF.
+*/
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+/*
+    TODO think about hanlding inheritence differently, maybe letting IE6 fail a bit...
+*/
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+q:before,
+q:after {
+  content: "";
+}
+
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+/* to preserve line-height and selector appearance */
+
+sup {
+  vertical-align: text-top;
+}
+
+sub {
+  vertical-align: text-bottom;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*to enable resizing for IE*/
+
+input,
+textarea,
+select {
+  *font-size: 100%;
+}
+
+/*because legend doesn't inherit in IE */
+
+legend {
+  color: #000;
+}
+
+/* YUI CSS Detection Stamp */
+
+#yui3-css-stamp.cssreset {
+  display: none;
+}
+
 .wrapper {
   width: 100vw;
   height: 100vh;
@@ -13783,10 +13934,7 @@ a.text-dark:focus {
 
 .side-bar__header .user-info__menu {
   height: 20px;
-  margin: 0;
-  padding: 0;
   display: flex;
-  list-style: none;
 }
 
 .side-bar__header .user-info__menu li {
@@ -13826,7 +13974,44 @@ a.text-dark:focus {
 .main-chat__header {
   height: 100px;
   padding: 0 40px;
+  display: flex;
   border-bottom: solid 1px #eee;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-chat__header .left {
+  margin-top: 40px;
+}
+
+.main-chat__header .left__group {
+  color: #333;
+  font-size: 20px;
+}
+
+.main-chat__header .left__member {
+  margin-top: 15px;
+  display: flex;
+  color: #999;
+  font-size: 12px;
+}
+
+.main-chat__header .left__member li {
+  margin-left: 3px;
+}
+
+.main-chat__header .right {
+  width: 72px;
+  height: 40px;
+  text-decoration: none;
+}
+
+.main-chat__header .right__edit-btn {
+  color: #38aef0;
+  font-size: 16px;
+  text-align: center;
+  line-height: 40px;
+  border: solid 1px #38aef0;
 }
 
 .main-chat__body {
