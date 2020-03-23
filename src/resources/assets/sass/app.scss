@@ -10,5 +10,8 @@
 // Font Awesome
 @import "node_modules/font-awesome-scss/scss/font-awesome.scss";
 
+// リセットCSS
+@import 'reset';
+
 // メッセージ一覧
 @import './messages/index.scss';
