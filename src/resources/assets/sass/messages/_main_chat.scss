@@ -5,7 +5,38 @@
     &__header {
         height: 100px;
         padding: 0 40px;
+        display: flex;
         border-bottom: solid 1px #eee;
+        align-items: center;
+        justify-content: space-between;
+        .left {
+            margin-top: 40px;
+            &__group {
+                color: #333;
+                font-size: 20px;
+            }
+            &__member {
+                margin-top: 15px;
+                display: flex;
+                color: #999;
+                font-size: 12px;
+                li {
+                    margin-left: 3px;
+                }
+            }
+        }
+        .right {
+            width: 72px;
+            height: 40px;
+            text-decoration: none;
+            &__edit-btn {
+                color: #38aef0;
+                font-size: 16px;
+                text-align: center;
+                line-height: 40px;
+                border: solid 1px #38aef0;
+            }
+        }
     }
     &__body {
         height: calc(100vh - 190px);
