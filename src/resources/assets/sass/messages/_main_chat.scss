@@ -9,7 +9,7 @@
         border-bottom: solid 1px #eee;
         align-items: center;
         justify-content: space-between;
-        .left {
+        .summary {
             margin-top: 40px;
             &__group {
                 color: #333;
@@ -25,11 +25,11 @@
                 }
             }
         }
-        .right {
+        .rbtn {
             width: 72px;
             height: 40px;
             text-decoration: none;
-            &__edit-btn {
+            &__edit {
                 color: #38aef0;
                 font-size: 16px;
                 text-align: center;
@@ -41,8 +41,35 @@
     &__body {
         height: calc(100vh - 190px);
         background-color: #fafafa;
+        .message-list {
+            padding: 40px;
+            .message {
+                margin-bottom: 40px;
+                &__header {
+                    height: 20px;
+                    margin-bottom: 10px;
+                    display: flex;
+                    line-height: 20px;
+                    &__user-name {
+                        color: #333;
+                        font-size: 16px;
+                        font-weight: bold;
+                    }
+                    &__sending-time {
+                        margin-left: 5px;
+                        color: #999;
+                        font-size: 12px;
+                    }
+                }
+                &__body {
+                    width: 99%;
+                    margin: 0 0 0 auto;
+                //     pre {}
+                }
+            }
+        }
     }
-    &__message {
+    &__form {
         height: 90px;
         background-color: #d2d2d2;
     }

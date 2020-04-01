@@ -13980,33 +13980,33 @@ legend {
   justify-content: space-between;
 }
 
-.main-chat__header .left {
+.main-chat__header .summary {
   margin-top: 40px;
 }
 
-.main-chat__header .left__group {
+.main-chat__header .summary__group {
   color: #333;
   font-size: 20px;
 }
 
-.main-chat__header .left__member {
+.main-chat__header .summary__member {
   margin-top: 15px;
   display: flex;
   color: #999;
   font-size: 12px;
 }
 
-.main-chat__header .left__member li {
+.main-chat__header .summary__member li {
   margin-left: 3px;
 }
 
-.main-chat__header .right {
+.main-chat__header .rbtn {
   width: 72px;
   height: 40px;
   text-decoration: none;
 }
 
-.main-chat__header .right__edit-btn {
+.main-chat__header .rbtn__edit {
   color: #38aef0;
   font-size: 16px;
   text-align: center;
@@ -14019,7 +14019,39 @@ legend {
   background-color: #fafafa;
 }
 
-.main-chat__message {
+.main-chat__body .message-list {
+  padding: 40px;
+}
+
+.main-chat__body .message-list .message {
+  margin-bottom: 40px;
+}
+
+.main-chat__body .message-list .message__header {
+  height: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  line-height: 20px;
+}
+
+.main-chat__body .message-list .message__header__user-name {
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.main-chat__body .message-list .message__header__sending-time {
+  margin-left: 5px;
+  color: #999;
+  font-size: 12px;
+}
+
+.main-chat__body .message-list .message__body {
+  width: 99%;
+  margin: 0 0 0 auto;
+}
+
+.main-chat__form {
   height: 90px;
   background-color: #d2d2d2;
 }
