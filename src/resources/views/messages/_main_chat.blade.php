@@ -50,5 +50,16 @@
             </div>
         </div>
     </div>
-    <div class="main-chat__form"></div>
+    <div class="main-chat__form">
+        <form class="message-form" action="#">
+            <div class="input-box">
+                <input class="message-form__text" name="text" type="text" placeholder="type a message">
+                <label for="image-select">
+                    <i class="fa fa-image"></i>
+                    <input id="image-select" class="message-form__image" name="image" type="file">
+                </label>
+            </div>
+            <button class="message-form__submit" type="submit">Send</button>
+        </form>
+    </div>
 </div>
