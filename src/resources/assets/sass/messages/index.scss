@@ -1,0 +1,10 @@
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+// メッセージ一覧のサイドバー
+@import './messages/side_bar';
+// メッセージ一覧のメイン画面
+@import './messages/main_chat';
