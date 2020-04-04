@@ -21,7 +21,9 @@
 
     <div class="side-bar__body">
         <div class="group">
-            <div class="group__name">グループ名</div>
+            <a href="#">
+                <div class="group__name">グループ名</div>
+            </a>
             <div class="group__message">メッセージ</div>
         </div>
     </div>
