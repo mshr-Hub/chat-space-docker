@@ -18,7 +18,6 @@
             </ul>
         </div>
     </div>
-
     <div class="side-bar__body">
         <div class="group">
             <a href="#">
