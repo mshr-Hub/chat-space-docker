@@ -38,6 +38,69 @@
             <div class="message">
                 <div class="message__header">
                     <p class="message__header__user-name">masa</p>
+                    <p class="message__header__sending-time">2020/4/1(Wed) 13:00:00</p>
+                </div>
+                <div class="message__body">
+                    <p>働いてえらい！</p>
+                </div>
+            </div>
+            <div class="message">
+                <div class="message__header">
+                    <p class="message__header__user-name">masa</p>
+                    <p class="message__header__sending-time">2020/4/1(Wed) 13:00:00</p>
+                </div>
+                <div class="message__body">
+                    <p>働いてえらい！</p>
+                </div>
+            </div>
+            <div class="message">
+                <div class="message__header">
+                    <p class="message__header__user-name">masa</p>
+                    <p class="message__header__sending-time">2020/4/1(Wed) 13:00:00</p>
+                </div>
+                <div class="message__body">
+                    <p>働いてえらい！</p>
+                </div>
+            </div>
+            <div class="message">
+                <div class="message__header">
+                    <p class="message__header__user-name">masa</p>
+                    <p class="message__header__sending-time">2020/4/1(Wed) 13:00:00</p>
+                </div>
+                <div class="message__body">
+                    <p>働いてえらい！</p>
+                </div>
+            </div>
+            <div class="message">
+                <div class="message__header">
+                    <p class="message__header__user-name">masa</p>
+                    <p class="message__header__sending-time">2020/4/1(Wed) 13:00:00</p>
+                </div>
+                <div class="message__body">
+                    <p>働いてえらい！</p>
+                </div>
+            </div>
+            <div class="message">
+                <div class="message__header">
+                    <p class="message__header__user-name">masa</p>
+                    <p class="message__header__sending-time">2020/4/1(Wed) 13:00:00</p>
+                </div>
+                <div class="message__body">
+                    <p>働いてえらい！</p>
+                </div>
+            </div>
+            <div class="message">
+                <div class="message__header">
+                    <p class="message__header__user-name">masa</p>
+                    <p class="message__header__sending-time">2020/4/1(Wed) 13:00:00</p>
+                </div>
+                <div class="message__body">
+                    <p>働いてえらい！</p>
+                </div>
+            </div>
+            <div class="message">
+                <div class="message__header">
+                    <p class="message__header__user-name">masa</p>
                     <p class="message__header__sending-time">2020/4/1(Wed) 14:00:00</p>
                 </div>
                 <div class="message__body">
