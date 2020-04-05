@@ -15,5 +15,7 @@ Route::get('/', 'MessagesController@index');
 Route::resource('messages', 'MessagesController', ['only' => [
     'index',
 ]]);
-
+Route::resource('users', 'UsersController', ['only' => [
+    'edit', 'update',
+]]);
 Auth::routes();
