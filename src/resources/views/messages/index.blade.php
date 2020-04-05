@@ -1,4 +1,4 @@
-@extends('layouts.template')
+@extends('layouts.app')
 @section('title', 'メッセージ一覧')
 
 @section('content')
