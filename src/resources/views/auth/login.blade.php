@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'ログイン')
 
 @section('content')
 <div class="container">
@@ -65,6 +66,15 @@
                             </div>
                         </div>
                     </form>
+
+                    <div class="form-group row mx-3 mb-0">
+                        <a href="{{ route('register') }}">
+                            <div class="btn btn-primary">
+                                {{ __('To Register') }}
+                            </div>
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </div>
