@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'MessagesController@index');
+Route::get('/', 'MessagesController@index')->name('root');
 Route::resource('messages', 'MessagesController', ['only' => [
     'index',
 ]]);
