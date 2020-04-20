@@ -11,11 +11,18 @@
 |
 */
 
+// ユーザー認証
+Auth::routes();
+
+// ルートパス
 Route::get('/', 'MessagesController@index')->name('root');
+
+// メッセージ関連
 Route::resource('messages', 'MessagesController', ['only' => [
     'index',
 ]]);
+
+// ユーザー関連
 Route::resource('users', 'UsersController', ['only' => [
     'edit', 'update',
 ]]);
-Auth::routes();

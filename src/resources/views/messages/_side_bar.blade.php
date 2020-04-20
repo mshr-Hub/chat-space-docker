@@ -11,7 +11,7 @@
                     </a>
                 </li>
                 <li class="edit-user">
-                    <a href="#">
+                    <a href="{{ route('users.edit', 1) }}">
                         <i class="fa fa-cog"></i>
                     </a>
                 </li>
