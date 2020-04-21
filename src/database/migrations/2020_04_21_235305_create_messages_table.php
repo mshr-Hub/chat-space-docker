@@ -15,15 +15,19 @@ class CreateMessagesTable extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('text');
-            $table->string('image');
+            $table->text('text')->nullable();
+            $table->string('image')->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('group_id');
+            $table->timestamps();
+
+            // 外部キー制約
             $table->foreign('user_id')
                   ->references('id')->on('users')
                   ->onDelete('cascade');
             $table->foreign('group_id')
                   ->references('id')->on('groups')
                   ->onDelete('cascade');
-            $table->timestamps();
         });
     }
 
