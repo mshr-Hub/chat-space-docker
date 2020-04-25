@@ -21,7 +21,23 @@
                             </div>
                         </div>
 
-                        <!-- TODO： グループメンバーの追加フォーム作成 -->
+                        <div class="form-group row">
+                            <label for="user__index" class="col-md-4 col-form-label text-md-right">{{ __('User Search') }}</label>
+                            <div class="col-md-6">
+                                <input id="user__index" type="text" class="form-control @error('user__index') is-invalid @enderror" required autofocus>
+                            </div>
+                        </div>
+
+                        <!-- TODO: hidden_fieldでユーザー情報を追加 -->
+                        <!-- TODO: 複数のユーザーを追加出来るようにname属性に"[]"を付ける -->
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Create') }}
+                                </button>
+                            </div>
+                        </div>
                     </form>
 
                 </div>
