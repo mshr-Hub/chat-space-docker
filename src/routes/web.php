@@ -26,3 +26,8 @@ Route::resource('messages', 'MessagesController', ['only' => [
 Route::resource('users', 'UsersController', ['only' => [
     'edit', 'update',
 ]]);
+
+// グループ関連
+Route::resource('groups', 'GroupsController', ['only' => [
+    'store', 'create',
+]]);
