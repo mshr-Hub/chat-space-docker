@@ -2,6 +2,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+                <!-- TODO: createとeditで表示するテキストを変更させる -->
                 <div class="card-header">{{ __('Create Group') }}</div>
 
                 <div class="card-body">
@@ -20,6 +21,7 @@
                             </div>
                         </div>
 
+                        <!-- TODO： グループメンバーの追加フォーム作成 -->
                     </form>
 
                 </div>

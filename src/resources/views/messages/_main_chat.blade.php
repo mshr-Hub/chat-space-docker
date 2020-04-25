@@ -1,9 +1,11 @@
 <div class="main-chat">
     <div class="main-chat__header">
         <div class="summary">
+            <!-- TODO: 登録グループ名を反映させる -->
             <h1 class="summary__group">グループ名</h1>
             <ul class="summary__member">
                 Member:
+                <!-- TODO: グループに所属するメンバーをループ処理で表示させる -->
                 <li class="summary__member__name">メンバー1</li>
                 <li class="summary__member__name">メンバー2</li>
                 <li class="summary__member__name">メンバー3</li>
@@ -17,12 +19,16 @@
     </div>
     <div class="main-chat__body">
         <div class="message-list">
+            <!-- TODO: グループのメッセージ情報をループ処理で表示 -->
             <div class="message">
                 <div class="message__header">
+                    <!-- TODO: メッセージのユーザー名を表示 -->
                     <p class="message__header__user-name">masa</p>
+                    <!-- TODO: メッセージのCTIMEを表示 -->
                     <p class="message__header__sending-time">2020/4/1(Wed) 12:00:00</p>
                 </div>
                 <div class="message__body">
+                    <!-- TODO: メッセージの内容（テキスト、または画像） -->
                     <p>こんにちは！</p>
                 </div>
             </div>

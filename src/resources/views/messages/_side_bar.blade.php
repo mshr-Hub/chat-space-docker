@@ -6,6 +6,7 @@
             </div>
             <ul class="user-info__menu">
                 <li class="new-group">
+                    <!-- TODO: 新規グループ作成画面へのルーティングを設定 -->
                     <a href="#">
                         <i class="fa fa-edit"></i>
                     </a>
@@ -19,10 +20,14 @@
         </div>
     </div>
     <div class="side-bar__body">
+        <!-- TODO: ユーザーの所属するグループの一覧をループ処理で表示 -->
         <div class="group">
+            <!-- TODO: メッセージ一覧画面へのルーティングを設定 -->
             <a href="#">
+                <!-- TODO: グループ名を表示 -->
                 <div class="group__name">グループ名</div>
             </a>
+            <!-- TODO: グループの最後のメッセージを表示 -->
             <div class="group__message">メッセージ</div>
         </div>
         <div class="group">
