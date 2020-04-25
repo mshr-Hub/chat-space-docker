@@ -2,6 +2,7 @@
 @section('title', 'アカウント編集')
 
 @section('content')
+<!-- users@edit -->
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
