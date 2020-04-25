@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Auth;
 
 class UsersController extends Controller
 {
@@ -25,7 +26,7 @@ class UsersController extends Controller
      */
     public function edit(int $id)
     {
-        $user = User::find($id);
+        $user = Auth::user();
         return view('users/edit', compact('user'));
     }
 
@@ -38,7 +39,7 @@ class UsersController extends Controller
      */
     public function update(Request $request, int $id)
     {
-        $user = User::find($id);
+        $user = Auth::user();
         if ($user->fill($request->all())->save()) {
             return redirect()->route('root');
         }

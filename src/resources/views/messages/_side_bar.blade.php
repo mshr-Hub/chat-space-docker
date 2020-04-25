@@ -2,7 +2,7 @@
     <div class="side-bar__header">
         <div class="user-info">
             <div class="user-info__name">
-                masa
+                {{ $user->name }}
             </div>
             <ul class="user-info__menu">
                 <li class="new-group">
@@ -11,7 +11,7 @@
                     </a>
                 </li>
                 <li class="edit-user">
-                    <a href="{{ route('users.edit', 1) }}">
+                    <a href="{{ route('users.edit', $user->id) }}">
                         <i class="fa fa-cog"></i>
                     </a>
                 </li>

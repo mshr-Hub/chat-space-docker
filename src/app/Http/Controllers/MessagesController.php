@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Message;
+use App\Models\User;
+use Auth;
 
 class MessagesController extends Controller
 {
@@ -13,7 +16,8 @@ class MessagesController extends Controller
      */
     public function index()
     {
-        return view('messages/index');
+        $user = Auth::user();
+        return view('messages/index', compact('user'));
     }
 
     /**
