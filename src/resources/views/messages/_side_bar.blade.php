@@ -7,7 +7,7 @@
             <ul class="user-info__menu">
                 <li class="new-group">
                     <!-- TODO: 新規グループ作成画面へのルーティングを設定 -->
-                    <a href="#">
+                    <a href="{{ route('groups.create') }}">
                         <i class="fa fa-edit"></i>
                     </a>
                 </li>
