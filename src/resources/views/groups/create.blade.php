@@ -3,7 +3,5 @@
 
 @section('content')
 <!-- groups@create -->
-<div class="wrapper">
-    @include('groups._form')
-</div>
+@include('groups._form')
 @endsection

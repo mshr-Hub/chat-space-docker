@@ -3,9 +3,9 @@
 
 @section('content')
 <!-- users@edit -->
-<div class="container">
+<div class="container py-5">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">{{ __('Edit Account') }}</div>
 
