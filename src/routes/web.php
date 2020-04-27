@@ -15,7 +15,7 @@
 Auth::routes();
 
 // ルートパス
-Route::get('/', 'MessagesController@index')->name('root');
+Route::get('/', 'GroupsController@index')->name('root');
 
 // メッセージ関連
 Route::resource('messages', 'MessagesController', ['only' => [
