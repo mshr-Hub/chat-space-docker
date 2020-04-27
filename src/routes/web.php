@@ -18,6 +18,7 @@ Auth::routes();
 Route::get('/', 'GroupsController@index')->name('root');
 
 // メッセージ関連
+// TODO: グループとネストさせる必要がある？
 Route::resource('messages', 'MessagesController', ['only' => [
     'index',
 ]]);
