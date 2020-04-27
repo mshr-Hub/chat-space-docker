@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Group extends Model
 {
     /**
+     * 書き込み防止パラメーター（ブラックリスト）
+     */
+    protected $guarded = ['id'];
+
+    /**
      * グループに関連するメッセージを取得
      *
      * @return void
@@ -17,22 +22,12 @@ class Group extends Model
     }
 
     /**
-     * グループに関連するメンバーを取得
-     *
-     * @return void
-     */
-    public function members()
-    {
-        return $this->hasMany('App\Models\Member');
-    }
-
-    /**
-     * グループに関連するユーザーをメンバーを経由して取得
+     * グループに関連するユーザーを取得
      *
      * @return void
      */
     public function users()
     {
-        return $this->hasManyThrough('App\Models\User', 'App\Models\Member');
+        return $this->belongsToMany('App\Models\User');
     }
 }

@@ -48,22 +48,12 @@ class User extends Authenticatable
     }
 
     /**
-     * ユーザーに関連するメンバーを取得
-     *
-     * @return void
-     */
-    public function members()
-    {
-        return $this->hasMany('App\Models\Member');
-    }
-
-    /**
-     * ユーザーに関連するグループをメンバー経由で取得
+     * ユーザーに関連するグループを取得
      *
      * @return void
      */
     public function groups()
     {
-        return $this->hasManyThought('App\Models\Group', 'App\Models\Member');
+        return $this->belongsToMany('App\Models\Group');
     }
 }
