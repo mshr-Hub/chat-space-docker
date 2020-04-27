@@ -29,5 +29,5 @@ Route::resource('users', 'UsersController', ['only' => [
 
 // グループ関連
 Route::resource('groups', 'GroupsController', ['only' => [
-    'store', 'create',
+    'index', 'store', 'create',
 ]]);

@@ -15,7 +15,8 @@ class GroupsController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+        return view('groups/index', compact('user'));
     }
 
     /**
