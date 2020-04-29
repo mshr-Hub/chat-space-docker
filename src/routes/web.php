@@ -17,18 +17,17 @@ Auth::routes();
 // ルートパス
 Route::get('/', 'GroupsController@index')->name('root');
 
+// グループ関連
+Route::resource('groups', 'GroupsController', ['only' => [
+    'store', 'create', 'edit', 'update'
+]]);
+
 // メッセージ関連
-// TODO: グループとネストさせる必要がある？
-Route::resource('messages', 'MessagesController', ['only' => [
-    'index',
+Route::resource('groups.messages', 'MessagesController', ['only' => [
+    'index', 'store'
 ]]);
 
 // ユーザー関連
 Route::resource('users', 'UsersController', ['only' => [
     'edit', 'update',
-]]);
-
-// グループ関連
-Route::resource('groups', 'GroupsController', ['only' => [
-    'index', 'store', 'create',
 ]]);
