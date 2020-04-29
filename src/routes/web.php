@@ -19,7 +19,7 @@ Route::get('/', 'GroupsController@index')->name('root');
 
 // グループ関連
 Route::resource('groups', 'GroupsController', ['only' => [
-    'store', 'create', 'edit', 'update'
+    'create', 'store', 'edit', 'update', 'destroy'
 ]]);
 
 // メッセージ関連
