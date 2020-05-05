@@ -14099,3 +14099,12 @@ legend {
   background-color: #38AEF0;
 }
 
+label.group__user__name {
+  display: block;
+}
+
+label.group__user__name button.user-remove {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+

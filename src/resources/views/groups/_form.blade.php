@@ -26,15 +26,20 @@
                             <div class="col-md-6">
                                 <input id="user__index" type="text" class="form-control" placeholder="追加したいユーザー名を入力して下さい">
                             </div>
+                            <!-- ユーザー検索の結果 -->
+                            <div id="user_search_result"></div>
                         </div>
 
                         <div class="form-group row">
                             <label for="group__user" class="col-md-4 col-form-label text-md-right">{{ __('Group User') }}</label>
                             <div class="col-md-6">
                                 <input id="group__user__{{ $user->id }}" type="hidden" class="form-control" value="{{ $user->id }}" name="group_user[user_id][]" required>
-                                <label for="group__user__{{ $user->id }}" class="col-form-label">{{ $user->name }}</label>
+                                <label for="group__user__{{ $user->id }}" class="col-form-label group__user__name">
+                                    {{ $user->name }}
+                                    <button type="button" class="btn btn-primary rounded-circle p-0 font-weight-bold user-remove">ー</button>
+                                </label>
+                                <!-- 追加されたユーザー -->
                             </div>
-                            <!-- TODO: hidden_fieldでユーザー情報を追加 -->
                         </div>
 
                         <div class="form-group row mb-0">
