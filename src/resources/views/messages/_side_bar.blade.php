@@ -21,8 +21,7 @@
     <div class="side-bar__body">
         @foreach ($user->groups as $group)
         <div class="group">
-            <!-- TODO: メッセージ一覧画面へのルーティングを設定 -->
-            <a href="#">
+            <a href="{{ route('groups.messages.index', $group->id) }}">
                 <div class="group__name">{{ $group->name }}</div>
             </a>
             <!-- TODO: グループの最後のメッセージを表示 -->
