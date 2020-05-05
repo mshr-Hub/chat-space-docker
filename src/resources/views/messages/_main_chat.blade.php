@@ -1,14 +1,12 @@
 <div class="main-chat">
     <div class="main-chat__header">
         <div class="summary">
-            <!-- TODO: 登録グループ名を反映させる -->
-            <h1 class="summary__group">グループ名</h1>
+            <h1 class="summary__group">{{ $group->name }}</h1>
             <ul class="summary__member">
                 Member:
-                <!-- TODO: グループに所属するメンバーをループ処理で表示させる -->
-                <li class="summary__member__name">メンバー1</li>
-                <li class="summary__member__name">メンバー2</li>
-                <li class="summary__member__name">メンバー3</li>
+                @foreach ($group->users as $user)
+                    <li class="summary__member__name">{{ $user->name }}</li>
+                @endforeach
             </ul>
         </div>
         <a class="rbtn" href="#">
