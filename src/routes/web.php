@@ -31,3 +31,8 @@ Route::resource('groups.messages', 'MessagesController', ['only' => [
 Route::resource('users', 'UsersController', ['only' => [
     'edit', 'update',
 ]]);
+Route::group(['middleware' => ['api']], function () {
+    Route::resource('users', 'Api\UsersController', ['only' => [
+        'index'
+    ]]);
+});
