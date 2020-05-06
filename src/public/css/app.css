@@ -14099,11 +14099,35 @@ legend {
   background-color: #38AEF0;
 }
 
-label.group__user__name {
+div#user_search_result {
+  max-height: 150px;
+  overflow: scroll;
+}
+
+div#user_search_result div.user__index__result {
+  border-bottom: solid 1px #ced4da;
+}
+
+div#user_search_result div.user__index__result:last-child {
+  border: none;
+}
+
+div#added_user {
+  max-height: 150px;
+  overflow: scroll;
+}
+
+div#added_user label.group__user__name {
+  border-bottom: solid 1px #ced4da;
   display: block;
 }
 
-label.group__user__name button.user-remove {
+div#added_user label.group__user__name:last-child {
+  border: none;
+}
+
+button.user-remove,
+button.user-add {
   width: 1.5rem;
   height: 1.5rem;
 }
