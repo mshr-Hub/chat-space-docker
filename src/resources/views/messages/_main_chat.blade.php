@@ -36,7 +36,8 @@
         </div>
     </div>
     <div class="main-chat__form">
-        <form class="message-form" action="{{ route('groups.messages.store', $group->id) }}">
+        <form method="POST" class="message-form" action="{{ route('groups.messages.store', $group->id) }}">
+            @csrf
             <div class="input-box">
                 <input class="message-form__text" name="text" type="text" placeholder="type a message">
                 <label for="image-select">

@@ -26,11 +26,21 @@ class MessagesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
+     * @param  int  $group_id
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(int $group_id, Request $request)
     {
-        //
+        $message = new Message();
+        $user = Auth::user();
+        $group = Group::find($group_id);
+
+        $message->fill($request->all())
+                ->user()->associate($user)
+                ->group()->associate($group)
+                ->save();
+
+        return redirect()->route('groups.messages.index', $group_id);
     }
 }
