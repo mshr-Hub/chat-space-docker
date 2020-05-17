@@ -2,9 +2,7 @@
 @section('title', 'メッセージ一覧')
 
 @section('content')
-    <div class="wrapper">
-        <!-- messages@index -->
-        @include('messages._side_bar', ['user' => $user])
-        @include('messages._main_chat')
-    </div>
+<!-- messages@index -->
+@include('messages._side_bar')
+@include('messages._main_chat')
 @endsection

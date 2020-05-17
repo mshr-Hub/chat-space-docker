@@ -6,7 +6,7 @@
             </div>
             <ul class="user-info__menu">
                 <li class="new-group">
-                    <a href="#">
+                    <a href="{{ route('groups.create') }}">
                         <i class="fa fa-edit"></i>
                     </a>
                 </li>
@@ -19,65 +19,14 @@
         </div>
     </div>
     <div class="side-bar__body">
+        @foreach ($user->groups as $group)
         <div class="group">
-            <a href="#">
-                <div class="group__name">グループ名</div>
+            <a href="{{ route('groups.messages.index', $group->id) }}">
+                <div class="group__name">{{ $group->name }}</div>
             </a>
+            <!-- TODO: グループの最後のメッセージを表示 -->
             <div class="group__message">メッセージ</div>
         </div>
-        <div class="group">
-            <a href="#">
-                <div class="group__name">グループ名</div>
-            </a>
-            <div class="group__message">メッセージ</div>
-        </div>
-        <div class="group">
-            <a href="#">
-                <div class="group__name">グループ名</div>
-            </a>
-            <div class="group__message">メッセージ</div>
-        </div>
-        <div class="group">
-            <a href="#">
-                <div class="group__name">グループ名</div>
-            </a>
-            <div class="group__message">メッセージ</div>
-        </div>
-        <div class="group">
-            <a href="#">
-                <div class="group__name">グループ名</div>
-            </a>
-            <div class="group__message">メッセージ</div>
-        </div>
-        <div class="group">
-            <a href="#">
-                <div class="group__name">グループ名</div>
-            </a>
-            <div class="group__message">メッセージ</div>
-        </div>
-        <div class="group">
-            <a href="#">
-                <div class="group__name">グループ名</div>
-            </a>
-            <div class="group__message">メッセージ</div>
-        </div>
-        <div class="group">
-            <a href="#">
-                <div class="group__name">グループ名</div>
-            </a>
-            <div class="group__message">メッセージ</div>
-        </div>
-        <div class="group">
-            <a href="#">
-                <div class="group__name">グループ名</div>
-            </a>
-            <div class="group__message">メッセージ</div>
-        </div>
-        <div class="group">
-            <a href="#">
-                <div class="group__name">グループ名</div>
-            </a>
-            <div class="group__message">メッセージ</div>
-        </div>
+        @endforeach
     </div>
 </div>
