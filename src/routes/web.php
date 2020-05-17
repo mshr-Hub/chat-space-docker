@@ -15,14 +15,24 @@
 Auth::routes();
 
 // ルートパス
-Route::get('/', 'MessagesController@index')->name('root');
+Route::get('/', 'GroupsController@index')->name('root');
+
+// グループ関連
+Route::resource('groups', 'GroupsController', ['only' => [
+    'create', 'store', 'edit', 'update', 'destroy'
+]]);
 
 // メッセージ関連
-Route::resource('messages', 'MessagesController', ['only' => [
-    'index',
+Route::resource('groups.messages', 'MessagesController', ['only' => [
+    'index', 'store'
 ]]);
 
 // ユーザー関連
 Route::resource('users', 'UsersController', ['only' => [
     'edit', 'update',
 ]]);
+Route::group(['middleware' => ['api']], function () {
+    Route::resource('users', 'Api\UsersController', ['only' => [
+        'index'
+    ]]);
+});

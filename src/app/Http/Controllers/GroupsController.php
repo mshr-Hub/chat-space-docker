@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Group;
+use Auth;
 
 class GroupsController extends Controller
 {
@@ -13,7 +15,8 @@ class GroupsController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+        return view('groups/index', compact('user'));
     }
 
     /**
@@ -23,7 +26,8 @@ class GroupsController extends Controller
      */
     public function create()
     {
-        //
+        $user = Auth::user();
+        return view('groups/create', compact('user'));
     }
 
     /**
@@ -34,18 +38,11 @@ class GroupsController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $group = new Group();
+        $group->fill($request->groups)->save();
+        $group->users()->attach($request->group_user['user_id']);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        return redirect()->route('root');
     }
 
     /**

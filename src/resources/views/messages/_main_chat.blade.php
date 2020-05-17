@@ -1,12 +1,12 @@
 <div class="main-chat">
     <div class="main-chat__header">
         <div class="summary">
-            <h1 class="summary__group">グループ名</h1>
+            <h1 class="summary__group">{{ $group->name }}</h1>
             <ul class="summary__member">
                 Member:
-                <li class="summary__member__name">メンバー1</li>
-                <li class="summary__member__name">メンバー2</li>
-                <li class="summary__member__name">メンバー3</li>
+                @foreach ($group->users as $user)
+                    <li class="summary__member__name">{{ $user->name }}</li>
+                @endforeach
             </ul>
         </div>
         <a class="rbtn" href="#">
@@ -17,12 +17,16 @@
     </div>
     <div class="main-chat__body">
         <div class="message-list">
+            <!-- TODO: グループのメッセージ情報をループ処理で表示 -->
             <div class="message">
                 <div class="message__header">
+                    <!-- TODO: メッセージのユーザー名を表示 -->
                     <p class="message__header__user-name">masa</p>
+                    <!-- TODO: メッセージのCTIMEを表示 -->
                     <p class="message__header__sending-time">2020/4/1(Wed) 12:00:00</p>
                 </div>
                 <div class="message__body">
+                    <!-- TODO: メッセージの内容（テキスト、または画像） -->
                     <p>こんにちは！</p>
                 </div>
             </div>

@@ -36,4 +36,24 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * ユーザーに関連するメッセージを取得
+     *
+     * @return void
+     */
+    public function messages()
+    {
+        return $this->hasMany('App\Models\Message');
+    }
+
+    /**
+     * ユーザーに関連するグループを取得
+     *
+     * @return void
+     */
+    public function groups()
+    {
+        return $this->belongsToMany('App\Models\Group');
+    }
 }
