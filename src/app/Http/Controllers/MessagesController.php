@@ -38,8 +38,10 @@ class MessagesController extends Controller
 
         $message->fill($request->all())
                 ->user()->associate($user)
-                ->group()->associate($group)
-                ->save();
+                ->group()->associate($group);
+
+        $message->image = isset($request->image) ? basename($request->image->store('public/messages')) : null;
+        $message->save();
 
         return redirect()->route('groups.messages.index', $group_id);
     }

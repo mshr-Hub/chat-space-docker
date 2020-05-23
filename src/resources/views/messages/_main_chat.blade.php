@@ -28,7 +28,7 @@
                             <p class="message__text">{{ $message->text }}</p>
                         @endif
                         @if ($message->image)
-                            <img class="message__image" src="{{ $message->image }}" alt="">
+                            <img class="message__image" src="{{ asset('storage/messages/' . $message->image) }}" alt="" width="300px">
                         @endif
                     </div>
                 </div>
@@ -36,7 +36,7 @@
         </div>
     </div>
     <div class="main-chat__form">
-        <form method="POST" class="message-form" action="{{ route('groups.messages.store', $group->id) }}">
+        <form method="POST" class="message-form" action="{{ route('groups.messages.store', $group->id) }}" enctype="multipart/form-data">
             @csrf
             <div class="input-box">
                 <input class="message-form__text" name="text" type="text" placeholder="type a message">
