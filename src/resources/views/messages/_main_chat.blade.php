@@ -28,7 +28,7 @@
                             <p class="message__text">{{ $message->text }}</p>
                         @endif
                         @if ($message->image)
-                            <img class="message__image" src="{{ asset('storage/messages/' . $message->image) }}" alt="" width="300px">
+                            <img class="message__image" src="{{ asset('/storage/messages/' . $message->image) }}" alt="" width="300px">
                         @endif
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                     <input id="image-select" class="message-form__image" name="image" type="file">
                 </label>
             </div>
-            <button class="message-form__submit" type="submit">Send</button>
+            <button class="message-form__submit border-0" type="submit">Send</button>
         </form>
     </div>
 </div>
