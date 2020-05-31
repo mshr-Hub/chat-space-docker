@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Message extends Model
 {
     /**
+     * 書き込み防止パラメーター（ブラックリスト）
+     */
+    protected $guarded = ['id'];
+
+    /**
      * メッセージを所有するユーザーを取得
      *
      * @return void
