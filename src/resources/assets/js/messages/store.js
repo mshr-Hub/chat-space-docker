@@ -1,13 +1,13 @@
 $(function() {
     // メッセージの非同期送信
-    // ajaxStoreMessage();
+    ajaxStoreMessage();
 
     function buildMessage(message) {
         var message_text = message.text ? `<p class="message__text">${ message.text }</p>` : ``;
         var message_image = message.image ? `<img class="message__image" src="/storage/messages/${ message.image }" alt="" width="300px">` : ``;
         return `<div class="message">
                     <div class="message__header">
-                        <p class="message__header__user-name">${ message.user_name }</p>
+                        <p class="message__header__user-name">${ message.user.name }</p>
                         <p class="message__header__sending-time">${ message.created_at }</p>
                     </div>
                     <div class="message__body">
@@ -52,12 +52,12 @@ $(function() {
                 dataType:    'json',
                 processData: false,
                 cache:       false,
+                contentType: false
             })
             .done(function(data) {
                 console.log(data.text);
                 resetMessageForm();
-                var message = buildMessage(data);
-                appendMessage(message);
+                appendMessage(buildMessage(data));
                 scrollMessagesIndexBottom();
             })
             .fail(function(data) {

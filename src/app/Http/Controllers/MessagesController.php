@@ -33,15 +33,14 @@ class MessagesController extends Controller
     public function store(int $group_id, Request $request)
     {
         $message = new Message();
-        $user = Auth::user();
-        $group = Group::find($group_id);
 
         if ($request->text || $request->image) {
             $message->fill($request->all())
-                    ->user()->associate($user)
-                    ->group()->associate($group);
-            $message->image = isset($request->image) ? basename($request->image->store('public/messages')) : null;
+                    ->user()->associate(Auth::user())
+                    ->group()->associate(Group::find($group_id));
+            $message->image = $request->image ? basename($request->image->store('public/messages')) : null;
             $message->save();
+            return $message;
         }
 
         return redirect()->route('groups.messages.index', $group_id);

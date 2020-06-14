@@ -49654,11 +49654,12 @@ __webpack_require__.r(__webpack_exports__);
 
 $(function () {
   // メッセージの非同期送信
-  // ajaxStoreMessage();
+  ajaxStoreMessage();
+
   function buildMessage(message) {
     var message_text = message.text ? "<p class=\"message__text\">".concat(message.text, "</p>") : "";
     var message_image = message.image ? "<img class=\"message__image\" src=\"/storage/messages/".concat(message.image, "\" alt=\"\" width=\"300px\">") : "";
-    return "<div class=\"message\">\n                    <div class=\"message__header\">\n                        <p class=\"message__header__user-name\">".concat(message.user_name, "</p>\n                        <p class=\"message__header__sending-time\">").concat(message.created_at, "</p>\n                    </div>\n                    <div class=\"message__body\">\n                        ").concat(message_text, "\n                        ").concat(message_image, "\n                    </div>\n                </div>");
+    return "<div class=\"message\">\n                    <div class=\"message__header\">\n                        <p class=\"message__header__user-name\">".concat(message.user.name, "</p>\n                        <p class=\"message__header__sending-time\">").concat(message.created_at, "</p>\n                    </div>\n                    <div class=\"message__body\">\n                        ").concat(message_text, "\n                        ").concat(message_image, "\n                    </div>\n                </div>");
   }
 
   function scrollMessagesIndexBottom() {
@@ -49695,12 +49696,12 @@ $(function () {
         data: new FormData(this),
         dataType: 'json',
         processData: false,
-        cache: false
+        cache: false,
+        contentType: false
       }).done(function (data) {
         console.log(data.text);
         resetMessageForm();
-        var message = buildMessage(data);
-        appendMessage(message);
+        appendMessage(buildMessage(data));
         scrollMessagesIndexBottom();
       }).fail(function (data) {
         console.log(data.text);
