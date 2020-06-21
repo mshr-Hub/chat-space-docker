@@ -18,7 +18,7 @@ $(function() {
                 </div>`;
     }
 
-    function getFormatDate(message_created){
+    function getFormatDate(message_created) {
         var dt = new Date(message_created);
         var y = dt.getFullYear();
         var m = ("00" + (dt.getMonth()+1)).slice(-2);
