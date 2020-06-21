@@ -49659,13 +49659,25 @@ $(function () {
   function buildMessage(message) {
     var message_text = message.text ? "<p class=\"message__text\">".concat(message.text, "</p>") : "";
     var message_image = message.image ? "<img class=\"message__image\" src=\"/storage/messages/".concat(message.image, "\" alt=\"\" width=\"300px\">") : "";
-    return "<div class=\"message\">\n                    <div class=\"message__header\">\n                        <p class=\"message__header__user-name\">".concat(message.user.name, "</p>\n                        <p class=\"message__header__sending-time\">").concat(message.created_at, "</p>\n                    </div>\n                    <div class=\"message__body\">\n                        ").concat(message_text, "\n                        ").concat(message_image, "\n                    </div>\n                </div>");
+    var message_created = getFormatDate(message.created_at);
+    return "<div class=\"message\">\n                    <div class=\"message__header\">\n                        <p class=\"message__header__user-name\">".concat(message.user.name, "</p>\n                        <p class=\"message__header__sending-time\">").concat(message_created, "</p>\n                    </div>\n                    <div class=\"message__body\">\n                        ").concat(message_text, "\n                        ").concat(message_image, "\n                    </div>\n                </div>");
   }
 
-  function scrollMessagesIndexBottom() {
-    var message_list = $('.message-list');
-    var position = $('.message').last().offset().top + message_list.scrollTop();
-    message_list.animate({
+  function getFormatDate(message_created) {
+    var dt = new Date(message_created);
+    var y = dt.getFullYear();
+    var m = ("00" + (dt.getMonth() + 1)).slice(-2);
+    var d = ("00" + dt.getDate()).slice(-2);
+    var h = dt.getHours();
+    var i = dt.getMinutes();
+    var result = y + "/" + m + "/" + d + " " + h + ":" + i;
+    return result;
+  }
+
+  function scrollMessageListBottom() {
+    var target = $('.main-chat__body');
+    var position = $('.message').last().offset().top + target.scrollTop();
+    target.animate({
       scrollTop: position
     }, 300, 'swing');
   }
@@ -49699,12 +49711,10 @@ $(function () {
         cache: false,
         contentType: false
       }).done(function (data) {
-        console.log(data.text);
         resetMessageForm();
         appendMessage(buildMessage(data));
-        scrollMessagesIndexBottom();
+        scrollMessageListBottom();
       }).fail(function (data) {
-        console.log(data.text);
         resetMessageForm();
         alert('メッセージを入力してください。');
       }).always(function () {
