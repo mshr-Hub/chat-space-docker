@@ -49525,7 +49525,9 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 
 var app = new Vue({
   el: '#app'
-});
+}); // メッセージの非同期保存
+
+__webpack_require__(/*! ./messages/store */ "./resources/assets/js/messages/store.js");
 
 /***/ }),
 
@@ -49640,6 +49642,87 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_7168fb6a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/assets/js/messages/store.js":
+/*!***********************************************!*\
+  !*** ./resources/assets/js/messages/store.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(function () {
+  // メッセージの非同期送信
+  ajaxStoreMessage();
+
+  function buildMessage(message) {
+    var message_text = message.text ? "<p class=\"message__text\">".concat(message.text, "</p>") : "";
+    var message_image = message.image ? "<img class=\"message__image\" src=\"/storage/messages/".concat(message.image, "\" alt=\"\" width=\"300px\">") : "";
+    var message_created = getFormatDate(message.created_at);
+    return "<div class=\"message\">\n                    <div class=\"message__header\">\n                        <p class=\"message__header__user-name\">".concat(message.user.name, "</p>\n                        <p class=\"message__header__sending-time\">").concat(message_created, "</p>\n                    </div>\n                    <div class=\"message__body\">\n                        ").concat(message_text, "\n                        ").concat(message_image, "\n                    </div>\n                </div>");
+  }
+
+  function getFormatDate(message_created) {
+    var dt = new Date(message_created);
+    var y = dt.getFullYear();
+    var m = ("00" + (dt.getMonth() + 1)).slice(-2);
+    var d = ("00" + dt.getDate()).slice(-2);
+    var h = dt.getHours();
+    var i = dt.getMinutes();
+    var result = y + "/" + m + "/" + d + " " + h + ":" + i;
+    return result;
+  }
+
+  function scrollMessageListBottom() {
+    var target = $('.main-chat__body');
+    var position = $('.message').last().offset().top + target.scrollTop();
+    target.animate({
+      scrollTop: position
+    }, 300, 'swing');
+  }
+
+  function appendMessage(message) {
+    $('.message-list').append(message);
+  }
+
+  function resetMessageForm() {
+    $('#message-form')[0].reset();
+  }
+
+  function ajaxSetUp() {
+    $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+    });
+  }
+
+  function ajaxStoreMessage() {
+    $('#message-form').on('submit', function (e) {
+      e.preventDefault();
+      ajaxSetUp();
+      $.ajax({
+        url: $(this).attr('action'),
+        type: 'POST',
+        data: new FormData(this),
+        dataType: 'json',
+        processData: false,
+        cache: false,
+        contentType: false
+      }).done(function (data) {
+        resetMessageForm();
+        appendMessage(buildMessage(data));
+        scrollMessageListBottom();
+      }).fail(function (data) {
+        resetMessageForm();
+        alert('メッセージを入力してください。');
+      }).always(function () {
+        $('.message-form__submit').prop('disabled', false);
+      });
+    });
+  }
+});
 
 /***/ }),
 

@@ -36,7 +36,7 @@
         </div>
     </div>
     <div class="main-chat__form">
-        <form method="POST" class="message-form" action="{{ route('groups.messages.store', $group->id) }}" enctype="multipart/form-data">
+        <form method="POST" id="message-form" class="message-form" action="{{ route('groups.messages.store', $group->id) }}" enctype="multipart/form-data">
             @csrf
             <div class="input-box">
                 <input class="message-form__text" name="text" type="text" placeholder="type a message">
