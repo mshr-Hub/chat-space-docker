@@ -1,4 +1,4 @@
-<div class="main-chat">
+<div class="main-chat" data-group_id="{{ $group->id }}">
     <div class="main-chat__header">
         <div class="summary">
             <h1 class="summary__group">{{ $group->name }}</h1>

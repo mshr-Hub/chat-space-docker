@@ -29,13 +29,13 @@ $(function() {
         return result;
     }
 
-    function scrollMessageListBottom() {
-        var target = $('.main-chat__body');
-        var position = $('.message').last().offset().top + target.scrollTop();
-        target.animate(
-            {scrollTop: position}, 300, 'swing'
-        );
-    }
+    // function scrollMessageListBottom() {
+    //     var target = $('.main-chat__body');
+    //     var position = $('.message').last().offset().top + target.scrollTop();
+    //     target.animate(
+    //         {scrollTop: position}, 300, 'swing'
+    //     );
+    // }
 
     function appendMessage(message) {
         $('.message-list').append(message);
@@ -69,7 +69,7 @@ $(function() {
             .done(function(data) {
                 resetMessageForm();
                 appendMessage(buildMessage(data));
-                scrollMessageListBottom();
+                // scrollMessageListBottom();
             })
             .fail(function(data) {
                 resetMessageForm();

@@ -49672,15 +49672,14 @@ $(function () {
     var i = dt.getMinutes();
     var result = y + "/" + m + "/" + d + " " + h + ":" + i;
     return result;
-  }
+  } // function scrollMessageListBottom() {
+  //     var target = $('.main-chat__body');
+  //     var position = $('.message').last().offset().top + target.scrollTop();
+  //     target.animate(
+  //         {scrollTop: position}, 300, 'swing'
+  //     );
+  // }
 
-  function scrollMessageListBottom() {
-    var target = $('.main-chat__body');
-    var position = $('.message').last().offset().top + target.scrollTop();
-    target.animate({
-      scrollTop: position
-    }, 300, 'swing');
-  }
 
   function appendMessage(message) {
     $('.message-list').append(message);
@@ -49712,8 +49711,7 @@ $(function () {
         contentType: false
       }).done(function (data) {
         resetMessageForm();
-        appendMessage(buildMessage(data));
-        scrollMessageListBottom();
+        appendMessage(buildMessage(data)); // scrollMessageListBottom();
       }).fail(function (data) {
         resetMessageForm();
         alert('メッセージを入力してください。');
